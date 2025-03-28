@@ -6,7 +6,7 @@ import pymongo
 import pandas as pd
 
 from dotenv import load_dotenv
-from networksecurity.constants import CONFIG_FILE_PATH
+from networksecurity.constant import CONFIG_FILE_PATH
 from networksecurity.utils.common import read_yaml
 from networksecurity.exception.exception import NetworkSecurityException
 
@@ -62,7 +62,7 @@ class NetworkDataExtract:
 
 def main():
     FILE_PATH = data_push_config.local_data_file
-    DATABASE = data_push_config.database
+    DATABASE = data_push_config.database_name
     Collection = data_push_config.collection
     networkobj = NetworkDataExtract()
     records = networkobj.csv_to_json_convertor(file_path=FILE_PATH)
